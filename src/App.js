@@ -1,13 +1,10 @@
-import Button from '@mui/material/Button';
-import Navbar from './components/Navbar';
+import Test from './components/Test';
 
 function App() {
   return (
     <>
-      <Navbar />
-      <Button variant="contained">
-        submit
-      </Button>
+      {/* <Navbar /> */}
+      <Test />
     </>
   );
 }
