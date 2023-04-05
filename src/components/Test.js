@@ -1,25 +1,26 @@
-import { Typography, Button, TextField } from "@mui/material";
 import React from "react";
 import { useState } from "react";
+import { Typography, Button, TextField, FormControl, InputLabel, Select, MenuItem } from "@mui/material";
 
 function Test() {
   const [input, setInput] = useState({
     name: "",
     email: "",
     password: "",
+    age: 0,
   });
 
   const handleChange = (e) => {
     setInput((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
-    }))
+    }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(input);
-  }
+  };
 
   return (
     <>
@@ -62,7 +63,10 @@ function Test() {
       <br />
       <br />
 
-      <form onSubmit={handleSubmit}>
+      <form
+        style={{ display: "flex", flexDirection: "column" }}
+        onSubmit={handleSubmit}
+      >
         <TextField
           onChange={handleChange}
           name="name"
@@ -79,6 +83,7 @@ function Test() {
           type="email"
           value={input.email}
         />
+
         <TextField
           onChange={handleChange}
           name="password"
@@ -87,6 +92,21 @@ function Test() {
           type="password"
           value={input.password}
         />
+        <FormControl fullWidth>
+          <InputLabel id="demo-simple-select-label">Age</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={input.age}
+            name="age"
+            label="Age"
+            onChange={handleChange}
+          >
+            <MenuItem value={10}>Ten</MenuItem>
+            <MenuItem value={20}>Twenty</MenuItem>
+            <MenuItem value={30}>Thirty</MenuItem>
+          </Select>
+        </FormControl>
         <Button type="submit" variant="contained">
           Submit
         </Button>
