@@ -1,12 +1,9 @@
-import Test from './components/Test';
-import Test2 from './components/Test2';
+import Test4 from './components/Test4';
 
 function App() {
   return (
     <>
-      <Test />
-      <br/>
-      <Test2 />
+      <Test4 />
     </>
   );
 }
